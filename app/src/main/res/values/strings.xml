@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">Calculator</string>
+    <string name="bt0">0</string>
+    <string name="bt1">1</string>
+    <string name="bt2">2</string>
+    <string name="bt3">3</string>
+    <string name="bt4">4</string>
+    <string name="bt5">5</string>
+    <string name="bt6">6</string>
+    <string name="bt7">7</string>
+    <string name="bt8">8</string>
+    <string name="bt9">9</string>
+    <string name="add">+</string>
+    <string name="sub">−</string>
+    <string name="mul">×</string>
+    <string name="div">÷</string>
+    <string name="equ">=</string>
+    <string name="dot">•</string>
+    <string name="bk">backspace</string>
+    <string name="ac">AC</string>
+    <string name="per">%</string>
+    <string name="fact">!</string>
+    <string name="space"><![CDATA[<]]></string>
 </resources>

@@ -1,21 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cloud_wisp">
+    android:background="@color/cloud_wisp"
+    >
 
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/display"
+        android:layout_width="390dp"
+        android:layout_height="280dp"
+        android:background="@drawable/rounded_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="80dp"
+        >
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="@id/display"
+            app:layout_constraintTop_toTopOf="@id/display">
+
+            <EditText
+                android:id="@+id/calc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:autofillHints=""
+                android:background="@drawable/edit_text_background"
+                android:digits="0123456789+-*/%."
+                android:fontFamily="@font/alexandria_medium"
+                android:gravity="end"
+                android:hint="@string/bt0"
+                android:textColor="@color/cloud_wisp"
+                android:textColorHint="@color/gray"
+                android:textSize="90sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+        </ScrollView>
+
+        <TextView
+            android:id="@+id/res"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt0"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="60sp"
+            app:layout_constraintBottom_toBottomOf="@id/display"
+            app:layout_constraintEnd_toEndOf="@id/display"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <GridLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/app_name"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.058"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="60dp"
+        android:columnCount="4"
+        android:rowCount="5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/display">
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/percent"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/per"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fact"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/fact"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ac"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/ac"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+<!--        <androidx.appcompat.widget.AppCompatButton-->
+<!--            android:id="@+id/space"-->
+<!--            android:layout_width="80dp"-->
+<!--            android:layout_height="80dp"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:background="@drawable/rounded_button"-->
+<!--            android:fontFamily="@font/alexandria_medium"-->
+<!--            android:text="@string/space"-->
+<!--            android:textColor="@color/cloud_wisp"-->
+<!--            android:textSize="30sp" />-->
+
+        <ImageButton
+            android:background="@drawable/rounded_button"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="10dp"
+            android:contentDescription="@string/bk"
+            android:src="@drawable/backspace"
+            android:scaleType="fitCenter"
+            android:padding="20dp"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt7"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt7"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt8"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt8"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt9"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt9"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/multiply"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/mul"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt4"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt4"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt5"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt5"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt6"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt6"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/add"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/add"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt1"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt1"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt2"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt2"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt3"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt3"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/difference"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/sub"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/dot"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/dot"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/bt0"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/bt0"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/equal"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/equ"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/division"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_margin="10dp"
+            android:background="@drawable/rounded_button"
+            android:fontFamily="@font/alexandria_medium"
+            android:text="@string/div"
+            android:textColor="@color/cloud_wisp"
+            android:textSize="30sp"
+
+            />
+
+    </GridLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
