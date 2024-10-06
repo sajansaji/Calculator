@@ -1,1 +1,1 @@
-My first Calculator Android app.
+Calculator Android app using Kotlin.
